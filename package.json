@@ -1,0 +1,21 @@
+{
+  "name": "amigo-secreto",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "compile": "tsc --watch",
+    "start": "npm run compile & npm run dev"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@types/node": "^24.3.0",
+    "ts-node": "^10.9.2"
+  }
+}
