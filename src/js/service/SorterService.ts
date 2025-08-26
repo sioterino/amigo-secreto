@@ -13,7 +13,7 @@ class SorterService {
 
         const people: Person[] = this.listService.people
 
-        if (people.length <= 3) throw new Error('Mínimo de 3 participantes é necessário')
+        // if (people.length <= 3) throw new Error('Mínimo de 3 participantes é necessário')
 
         let shuffled: Person[];
         let attempts = 0;

@@ -1,3 +1,4 @@
+import EmailService from "../service/EmailService"
 import type ListService from "../service/ListService"
 import type SorterService from "../service/SorterService"
 
@@ -7,10 +8,13 @@ class SorterController {
     private list: HTMLDivElement
     private listService: ListService
     private sorterService: SorterService
+    private emailService: EmailService
 
-    constructor(button: HTMLButtonElement, sorterService: SorterService, list: HTMLDivElement, listService: ListService) {
+    constructor(button: HTMLButtonElement, sorterService: SorterService, list: HTMLDivElement, listService: ListService, emailService: EmailService) {
         this.sorterService = sorterService
         this.listService = listService
+        this.emailService = emailService
+
         this.list = list
         this.button = button
         this.button.addEventListener('click', (e: Event) => this.sort(e))
@@ -27,6 +31,7 @@ class SorterController {
         }
 
         this.listService.printSecretFriends()
+        this.emailService.send(this.listService.people)
     }
 
     private update() {
@@ -40,7 +45,6 @@ class SorterController {
             }
         })
     }
-
-}
+    }
 
 export default SorterController
