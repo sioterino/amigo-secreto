@@ -1,0 +1,117 @@
+.lista {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 160px;
+}
+
+h2 {
+    text-align: center;
+    width: 280px;
+}
+
+.dica {
+    width: 280px;
+    text-align: center;
+    padding: 3rem 1.3rem;
+    color: var(--p-color);
+}
+
+.card {
+    width: 280px;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon.close {
+    font-size: 1.5rem;
+    height: fit-content;
+}
+
+.icon.close:hover {
+    color: var(--orange-500);
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.card h3, option {
+    text-transform: capitalize;
+}
+
+.card p {
+    font-size: .8rem;
+    font-style: italic;
+    color: var(--p-color);
+}
+
+.select-excluir {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    background-color: transparent;
+}
+
+select:focus {
+    border: 1px solid var(--input-border-active);
+}
+
+option {
+    font-size: 1rem;
+}
+
+.icon.arrow {
+    user-select: none;
+    touch-action: none;
+    pointer-events: none;
+        
+    position: absolute;
+    transform: rotate(90deg);
+    right: 4%;
+    color: var(--p-color);
+
+    font-size: 1.7rem;
+}
+
+select:focus ~ .arrow {
+    color: var(--orange-500);
+    transform: rotate(270deg);
+}
+
+option {
+  background-color: var(--card-bg);
+  
+}
+
+.sorter-button {
+    width: 280px;
+}

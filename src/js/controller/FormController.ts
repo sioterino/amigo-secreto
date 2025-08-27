@@ -25,6 +25,7 @@ class FormController {
         const name: string = this.nameInput.value
         const email: string = this.emailInput.value
         this.form.reset()
+        this.nameInput.focus()
 
         this.listController.push(new Person(email, name))
     }

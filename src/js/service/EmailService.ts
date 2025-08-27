@@ -3,9 +3,10 @@ import type Person from "../models/Person"
 
 class EmailService {
 
-    private serviceID = process.env.EMAILJS_SERVICE_ID!
-    private templateID = process.env.EMAILJS_TEMPLATE_ID!
-    private publicKey = process.env.EMAILJS_PUBLIC_KEY!
+    private serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID!
+    private templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID!
+    private publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
+
 
     constructor() {
         emailjs.init(this.publicKey)

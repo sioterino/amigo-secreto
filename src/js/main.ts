@@ -1,9 +1,16 @@
+import Theme from "./components/Theme";
 import FormController from "./controller/FormController"
 import ListController from "./controller/ListController";
 import SorterController from "./controller/SorterController";
 import EmailService from "./service/EmailService";
 import ListService from "./service/ListService";
 import SorterService from "./service/SorterService";
+import Storage from "./utils/Storage";
+
+const themeRepo = new Storage('theme', (item: string) => item)
+const light = document.querySelector('.day') as HTMLSpanElement
+const dark = document.querySelector('.night') as HTMLSpanElement
+new Theme(light, dark, themeRepo)
 
 const listService = new ListService()
 const list = document.querySelector('.lista') as HTMLDivElement

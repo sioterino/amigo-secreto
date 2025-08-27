@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amigo Secreto</title>
-
+    <link rel="stylesheet" href="/src/styles/global.css">
     <script type="module" src="/src/js/main.ts" defer></script>
   </head>
   <body>
     <header>
       <h1>Amigo Secreto</h1>
+      <div class="theme">
+        <span class="icon night hidden">dark_mode</span>
+        <span class="icon day">light_mode</span>
+      </div>
     </header>
     <main>
 
@@ -27,6 +31,7 @@
 
       <div class="lista">
         <h2>Participantes</h2>
+        <p class="dica">Adicione ao menos quatro participantes para o amigo secreto funcionar!</p>
       </div>
 
       <button class="sorter-button" type="button">Sortear</button>
@@ -35,13 +40,19 @@
 
     <template id="card-template">
       <div class="card">
-        <p class="nome">Nome Pessoa</p>
-        <div class="select-excluir">
-          <label for="excluir">Excluir</label>
-          <select name="excluir" class="excluir-select">
-            <option value="none">Nenhum</option>
-          </select>
+        <div class="top">
+          <div class="info">
+            <h3 class="nome">Nome Pessoa</h3>
+            <p class="email">email@email.com</p>
+          </div>
         </div>
+        <div class="select-excluir">
+            <label for="excluir">Excluir</label>
+            <select name="excluir" class="excluir-select">
+              <option value="none">Nenhum</option>
+            </select>
+            <span class="icon arrow">chevron_right</span>
+          </div>
       </div>
     </template>
 

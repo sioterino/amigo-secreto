@@ -1,0 +1,65 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 280px;
+
+    padding: 1rem;
+    border-radius: 1rem;
+
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+
+    margin-bottom: 3rem;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+input, select, button {
+    border: none;
+    outline: none;
+    offset: none;
+}
+
+input {
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    background-color: transparent;
+}
+
+input:focus {
+    border: 1px solid var(--input-border-active);
+}
+
+label {
+    font-weight: 600;
+    color: var(--label-color);
+}
+
+button {
+    margin-top: 1.5rem;
+
+    background-color: var(--button-bg);
+    color: var(--button-text);
+
+    font-size: 1rem;
+    font-weight: 700;
+    padding: .7rem 2.5rem;
+    border-radius: .5rem;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-bg-hover);
+}
+
+button:active {
+    background-color: var(--button-bg-click);
+}

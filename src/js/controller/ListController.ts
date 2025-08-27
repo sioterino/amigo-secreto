@@ -43,6 +43,7 @@ class ListController {
 
         clone!.id = String(person.id)
         clone.querySelector('.nome')!.textContent = person.name
+        clone.querySelector('.email')!.textContent = person.email
         
         const select = clone.querySelector('.excluir-select') as HTMLSelectElement
         
@@ -52,7 +53,7 @@ class ListController {
             }
         })
 
-        clone.append(new Delete(this, person.id).element)
+        clone.querySelector('.top')!.append(new Delete(this, person.id).element)
 
         return clone
     }

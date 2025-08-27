@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+    padding: 2rem 1rem;
+}
+
+.icon.night,
+.icon.day {
+    font-size: 2rem;
+}
+
+.icon.night:hover,
+.icon.day:hover {
+    color: var(--orange-500);
+}
