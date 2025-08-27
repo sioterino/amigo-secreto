@@ -8,6 +8,9 @@
     <script type="module" src="/src/js/main.ts" defer></script>
   </head>
   <body>
+
+    <div class="popup-wrapper"></div>
+
     <header>
       <h1>Amigo Secreto</h1>
       <div class="theme">
@@ -34,14 +37,17 @@
         <p class="dica">Adicione ao menos quatro participantes para o amigo secreto funcionar!</p>
       </div>
 
-      <button class="sorter-button" type="button">Sortear</button>
+      <div class="buttons-wrapper">
+        <button disabled class="clear-button" type="button">Limpar</button>
+        <button disabled class="sorter-button" type="button">Sortear</button>
+      </div>
 
     </main>
 
     <template id="card-template">
       <div class="card">
         <div class="top">
-          <div class="info">
+          <div class="user-info">
             <h3 class="nome">Nome Pessoa</h3>
             <p class="email">email@email.com</p>
           </div>

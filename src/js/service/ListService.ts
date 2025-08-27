@@ -24,28 +24,12 @@ class ListService {
         return this.list
     }
 
-    public findById(id: number): Person {
-        return this.list.filter(item => item.id === id)[0]
+    public clear(): void {
+        this.list = []
     }
 
-    public printSecretFriends(): void {
-        const people = this.list;
-
-        let start = people[0];
-        let current = start;
-        const names: string[] = [];
-
-        do {
-            names.push(current.name);
-            if (!current.secretFriend) {
-                console.log("O círculo não foi totalmente atribuído.");
-                return;
-            }
-            current = current.secretFriend;
-        } while (current.id !== start.id);
-
-        names.push(start.name);
-        console.log(names.join(" > "));
+    public findById(id: number): Person {
+        return this.list.filter(item => item.id === id)[0]
     }
 
 }

@@ -1,0 +1,34 @@
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.clear-button {
+    width: 110px;
+}
+
+.sorter-button {
+    width: 162px;
+}
+
+.clear-button {
+    background-color: var(--hollow-button-bg);
+    color: var(--hollow-button-text);
+}
+
+.clear-button:hover {
+    background-color: var(--hollow-button-bg-hover);
+}
+
+.clear-button:active {
+    background-color: var(--hollow-button-bg-click);
+}
+
+
+button:disabled,
+button:disabled:hover,
+button:disabled:active {
+    background-color: var(--disabled-button);
+    cursor:default;
+    color: var(--gray-50);
+}

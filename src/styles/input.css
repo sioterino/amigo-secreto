@@ -1,4 +1,5 @@
 form {
+     color: var(--color-text);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -20,6 +21,7 @@ form {
 }
 
 input, select, button {
+     color: var(--color-text);
     border: none;
     outline: none;
     offset: none;

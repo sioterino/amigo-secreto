@@ -1,0 +1,42 @@
+.popup-wrapper {
+    position: absolute;
+}
+
+.popup {
+    color: var(--popup-text-color);
+    margin-top: 1.5rem;
+    max-width: 260px;
+    padding: .5rem 1.5rem;
+    border-radius: 4rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    transform: translateY(-120%);
+    transition: all .2s ease-in-out;
+}
+
+.show {
+    transform: translateY(0);
+}
+
+.hide {
+    transform: translateY(-120%);
+}
+
+.popup .icon {
+    font-size: 1.3rem;
+}
+
+.warn {
+    background-color: rgb(235, 51, 51);
+}
+
+.info {
+    background-color: rgb(49, 118, 237);
+}
+
+.success {
+    background-color: rgb(58, 179, 58);
+}

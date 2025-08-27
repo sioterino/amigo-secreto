@@ -1,40 +1,44 @@
+import PopUp from "../components/PopUp"
 import EmailService from "../service/EmailService"
 import type ListService from "../service/ListService"
 import type SorterService from "../service/SorterService"
 
 class SorterController {
 
-    private button: HTMLButtonElement
+    private sortButton: HTMLButtonElement
     private list: HTMLDivElement
     private listService: ListService
     private sorterService: SorterService
     private emailService: EmailService
 
-    constructor(button: HTMLButtonElement, sorterService: SorterService, list: HTMLDivElement, listService: ListService, emailService: EmailService) {
+    constructor(sortButton: HTMLButtonElement, sorterService: SorterService, list: HTMLDivElement, listService: ListService, emailService: EmailService) {
         this.sorterService = sorterService
         this.listService = listService
         this.emailService = emailService
 
         this.list = list
-        this.button = button
-        this.button.addEventListener('click', (e: Event) => this.sort(e))
+        this.sortButton = sortButton
+        this.sortButton.addEventListener('click', (e: Event) => this.sort(e))
     }
 
-    private sort(e: Event) {
+    private async sort(e: Event): Promise<void> {
         e.preventDefault
         this.update()
 
         try {
             this.sorterService.sort();
         } catch (error) {
-            console.error("Erro ao sortear secret friends:", error);
+            if (error instanceof Error) new PopUp('warn', error.message).show();
+            else new PopUp('warn', String(error)).show();
+            return
         }
 
-        this.listService.printSecretFriends()
-        this.emailService.send(this.listService.people)
+        new PopUp('info', 'Sorteando e enviando emails...').show((this.listService.people.length - 1) * 1000)
+        await this.emailService.send(this.listService.people)
+        new PopUp('success', 'Emails enviados!').show()
     }
 
-    private update() {
+    private update(): void {
         const cards = this.list.querySelectorAll('.card')
         cards.forEach(card => {
             const value = card.querySelector('select')!.value
@@ -45,6 +49,6 @@ class SorterController {
             }
         })
     }
-    }
+}
 
 export default SorterController

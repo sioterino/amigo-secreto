@@ -7,7 +7,6 @@ class EmailService {
     private templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID!
     private publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
 
-
     constructor() {
         emailjs.init(this.publicKey)
     }
@@ -18,8 +17,6 @@ class EmailService {
             await emailjs.send(this.serviceID, this.templateID, params)
             await new Promise((resolve) => setTimeout(resolve, 1000))
         }
-
-        console.log('Todos os emails foram enviados')
     }
 
     private emailParams(person: Person) {
